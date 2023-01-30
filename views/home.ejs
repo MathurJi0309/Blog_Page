@@ -1,0 +1,10 @@
+<%-include("partials/header")-%>
+
+
+<% for(let i=0;i<posts.length;i++){ %>
+    <h1>Title-<%=posts[i].title%></h1>
+    <h2>Post</h2>
+    <p><%=posts[i].content%></p>
+<% } %>
+
+<%-include("partials/footer")-%>

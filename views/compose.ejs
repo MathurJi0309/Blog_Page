@@ -1,0 +1,22 @@
+<%-include("partials/header")-%>
+<h1>Compose</h1>
+<!-- <form action="/compose" method="post">
+        <input type="text" name="compose"  placeholder="write your blog here">
+    <button type="submit">Publish</button>
+</form> -->
+<form class="row gy-2 gx-3 align-items-center" action="/compose" method="post">
+    <div class="col-auto">
+      <label class="visually-hidden" for="autoSizingInput">Post Title</label>
+      <input type="text" name="compose" class="form-control" id="autoSizingInput" placeholder="Post title">
+    </div>
+    <div class="col-auto">
+        <label class="visually-hidden" for="autoSizingInput">Post</label>
+        <textarea type="text" name="Post" class="form-control" id="autoSizingInput" placeholder="Post title" rows="10"></textarea>
+      </div>
+    
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Publish</button>
+    </div>
+  </form>
+
+<%-include("partials/footer")-%>
