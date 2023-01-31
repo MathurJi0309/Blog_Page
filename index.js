@@ -1,6 +1,7 @@
 const express=require('express');
 const bodyParser=require('body-parser');
 const ejs=require('ejs');
+const _=require('lodash');
 
 const app=express();
 
@@ -48,8 +49,16 @@ app.post("/compose",function(req,res){
 
 })
 
-
-
+app.get("/posts/:idpm",function(req,res){
+    let paramss=req.params.idpm;
+    paramss=_.lowerCase(paramss);
+    post.forEach(post => {
+        let postTit=_.lowerCase(post.title);
+        if(postTit===paramss){
+            res.render("post" ,{posttitle:post.title,postcontent:post.content})
+        }
+    });
+})
 
 app.listen(3000,function(){
     console.log("the server is running on the port 3000");
